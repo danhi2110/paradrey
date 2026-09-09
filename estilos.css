@@ -1,0 +1,112 @@
+#outside {
+  z-index: 1;
+  position: absolute;
+  background: linear-gradient(to bottom, rgb(196, 233, 255), rgb(255, 255, 255));
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: 1s;
+  transform-origin: 0;
+}
+
+.open-card {
+  transform: rotateY(90deg);
+}
+
+#outside-title {
+  color: rgb(65, 130, 180);
+  font-family: 'Dancing Script', cursive; /* Fuente linda para el título */
+  font-size: 30pt;
+  text-align: center;
+}
+
+#outside-pic {
+  width: 300px;
+  height: 150px;
+}
+
+#outside-help {
+  color: black;
+  font-family: Courier;
+  font-size: 12pt;
+  text-align: center;
+  padding: 20px;
+}
+
+#inside {
+  z-index: 0;
+  position: absolute;
+  background: linear-gradient(to bottom, rgb(255, 236, 214), rgb(255, 214, 166));
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+#inside-title {
+  color: rgb(139, 90, 43);
+  font-family: 'Dancing Script', cursive; /* Fuente linda también para el título de adentro */
+  font-size: 22pt;
+  text-align: center;
+}
+
+#inside-pic {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  opacity: 0; /* empieza invisible, la animación la muestra */
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.2) translateY(-40px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15) translateY(10px);
+  }
+  70% {
+    transform: scale(0.9) translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.bounce-in {
+  animation: bounce-in 0.8s ease-out forwards;
+}
+
+#message {
+  color: rgb(90, 60, 30);
+  font-family: 'Pacifico', cursive; /* Fuente decorativa y juguetona para el mensaje */
+  font-size: 14pt;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Estilos para los botones */
+button {
+  background: linear-gradient(to right, rgb(135, 206, 250), rgb(255, 200, 150)); /* Degradado Cinnamoroll + Momonga */
+  color: rgb(90, 60, 30); /* Texto marrón suave */
+  border: none; /* Sin borde */
+  border-radius: 25px; /* Bordes redondeados */
+  padding: 10px 20px; /* Espaciado interno */
+  font-family: 'Dancing Script', cursive; /* La misma fuente linda que usas para los títulos */
+  font-size: 16pt; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  transition: background 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+}
+
+button:hover {
+  background: linear-gradient(to right, rgb(255, 200, 150), rgb(135, 206, 250)); /* Invierte el degradado al pasar el mouse */
+  transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+}
+
+button:active {
+  transform: scale(0.95); /* Efecto de contracción al hacer clic */
+}
+#extra-image {
+  margin-top: 20px; /* Espacio arriba de la imagen */
+}
